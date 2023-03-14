@@ -1,0 +1,52 @@
+version: "3.7"
+services:
+  database:
+    image: mysql:8
+    container_name: database
+    restart: always
+    volumes: 
+      - './mysql-docker:/var/lib/mysql'
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: dockerimage   
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+    ports:
+      - 3307:3306
+    networks:
+      - sprbt-docker_default
+      # - spring-boot-with-docker_default
+  spring-boot-app:
+    build:
+      context: ./sprbt-docker/
+      dockerfile: dockerfile
+    #image: product-backend-app
+    container_name: springboot-app
+    restart: always
+    depends_on:
+      - database
+    ports:
+      - "9090:9090"
+    networks:
+      - app-network    
+      - sprbt-docker_default
+      - frontendNetwork
+  angular-app:
+    build:
+      context: ./angul-docker/
+      dockerfile: dockerfile
+    #image: product-frontend-app
+    container_name: angular-app
+    restart: always
+    ports:
+      - "4300:80"
+    depends_on:
+      - spring-boot-app
+    networks:
+      - app-network
+      - frontendNetwork
+networks:
+  app-network:
+  sprbt-docker_default:
+  # spring-boot-with-docker_default:
+  frontendNetwork:
