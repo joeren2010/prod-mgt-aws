@@ -22,13 +22,13 @@ public class ProductController {
 	@Autowired
 	ProductService productService;
 	
-	//http://localhost:9090/products/storeProduct
+	//http://localhost:92902/products/storeProduct
 	@PostMapping(value = "storeProduct",consumes = MediaType.APPLICATION_JSON_VALUE)
 	public String storeProduct(@RequestBody Product product) {
 		return productService.storeProduct(product);
 	}
 	
-	//http://localhost:9090/products/findAllProducts
+	//http://localhost:9292/products/findAllProducts
 	@GetMapping(value = "findAllProducts",produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Product> findAllProducts() {
 		return productService.findProduct();
