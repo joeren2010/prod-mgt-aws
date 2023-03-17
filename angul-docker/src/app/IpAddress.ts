@@ -1,3 +1,3 @@
 export function IpAddress() {
-  return '34.228.113.20'; //public ipv4 addy from aws' ec2 instance
+  return '107.22.147.232'; //public ipv4 addy from aws' ec2 instance
 }
