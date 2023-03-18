@@ -25,7 +25,7 @@ public class ProductService {
 			return "Product id must be unique";
 		}else {
 			productRepository.save(product);
-			return "Record stored";
+			return "Record Stored Successfully";
 		}
 	}
 }

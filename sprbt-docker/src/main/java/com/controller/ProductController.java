@@ -22,7 +22,7 @@ public class ProductController {
 	@Autowired
 	ProductService productService;
 	
-	//http://localhost:92902/products/storeProduct
+	//http://localhost:9292/products/storeProduct
 	@PostMapping(value = "storeProduct",consumes = MediaType.APPLICATION_JSON_VALUE)
 	public String storeProduct(@RequestBody Product product) {
 		return productService.storeProduct(product);
