@@ -22,12 +22,12 @@ services:
     container_name: springboot-app
     depends_on:
       - database
-    restart: always
     ports:
       - "9292:9292"
     networks:
       - backend
       - frontend
+    restart: always
   angular-app:
     build:
       context: ./angul-docker/
@@ -36,8 +36,8 @@ services:
     ports:
       - "4300:80"
     networks:
-      - frontend    
+      - frontend 
+    restart: always         
 networks:
   frontend:
   backend:
-restart: always
