@@ -8,7 +8,7 @@ import { IpAddress } from './IpAddress';
   providedIn: 'root',
 })
 export class ProductService {
-  baseUrl: string = 'http://107.22.147.232:9090/products'; //for aws - you enter ip addy in each service files
+  baseUrl: string = 'http://18.207.144.175:9090/products'; //for aws - you enter ip addy in each service files
   // baseUrl: string = `http://${IpAddress}:9090/products`;       //for aws - you enter ip addy in only one place
   // baseUrl: string = 'http://localhost:9090/products';
   constructor(public http: HttpClient) {}
