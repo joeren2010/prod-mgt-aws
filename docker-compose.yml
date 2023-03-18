@@ -8,8 +8,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: dockerimage   
-      MYSQL_USER: root
-      MYSQL_PASSWORD: root
+      # MYSQL_USER: root
+      # MYSQL_PASSWORD: root
     ports:
       - 3308:3306
     networks:
